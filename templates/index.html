@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Ollie landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Ollie Landing page | Free Bootstrap 4.3.x landing page</title>
+
+    <!-- font icons -->
+    <link rel="stylesheet" href="static/vendors/themify-icons/css/themify-icons.css">
+    
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="static/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="static/vendors/owl-carousel/css/owl.theme.default.css">
+
+    <!-- Bootstrap + Ollie main styles -->
+	<link rel="stylesheet" href="static/css/ollie.css">
+    
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="static/imgs/brand.svg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary" href="#portfolio">Resultados</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Calidad del aire<br> waza (Grupo 3)</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+        </div>
+    </header>
+    <section class="section" id="portfolio">
+    <!-- main content -->
+   <div class="container">
+    <!-- navbars-->     
+    <h3 class="components-section-title font-weight-normal mt-5">Contaminantes</h3>
+        {% set colores = ["bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info"] %}
+        {% for contaminante in Contaminantes %}
+            {% set color_index = loop.index0 % colores|length %}
+        <nav class="navbar navbar-expand-sm navbar-dark {{ colores[color_index] }} rounded shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">{{ contaminante }}</a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
+                    </li>
+                </ul>                       
+            </div>
+        </div>
+        </nav>
+        {% endfor %}
+
+    </section>
+    
+	<!-- core  -->
+    <script src="static/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="static/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="static/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Owl carousel  -->
+    <script src="static/vendors/owl-carousel/js/owl.carousel.js"></script>
+
+    <!-- Ollie js -->
+    <script src="static/js/Ollie.js"></script>
+</body>
+</html>
