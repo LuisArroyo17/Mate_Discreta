@@ -20,34 +20,22 @@ Unidad1= []
 Promedio1= []
 Ultimo_Valor1= []
 Ultima_Actualizacion1= []
+Calidad= []
 for location in sorted_location_data:
     print("Nombre:", location["name"])
     print("Ciudad:", location["city"])
     print("País:", location["country"])
     print("-----")
-    #if location["country"]== "EEUU"
     # Creamos las listas para los valores
     Contaminantes= []
     Unidad= []
     Promedio= []
     Ultimo_Valor= []
     Ultima_Actualizacion= []
-    if location["country"]== "US":
-        Contaminantes1= []
-        Unidad1= []
-        Promedio1= []
-        Ultimo_Valor1= []
-        Ultima_Actualizacion1= []
-    if location["country"]== "PE":
-        Contaminantes1= []
-        Unidad1= []
-        Promedio1= []
-        Ultimo_Valor1= []
-        Ultima_Actualizacion1= []
     colores = ["bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info"]
 for parameter in location['parameters']:
-    print(parameter['parameter'])
-    print(parameter['unit'])
+    #print(parameter['parameter'])
+    #print(parameter['unit'])
     #print(parameter['average'])
     #print(parameter['lastValue'])
     #print(parameter['lastUpdated'])
@@ -57,15 +45,17 @@ for parameter in location['parameters']:
     Ultimo_Valor.append(parameter['lastValue'])
     Ultima_Actualizacion.append(parameter['lastUpdated'])
     print("-----")
+    if parameter['lastValue']<parameter['average']:
+        Calidad.append('Bueno')
+    else:
+        Calidad.append('Malo')
 app = Flask(__name__)
 app.static_folder = 'static'
 @app.route('/')
 def index():
     return render_template('index.html',Contaminantes=Contaminantes,Unidad=Unidad,Promedio=Promedio,
                            Ultimo_Valor=Ultimo_Valor,Ultima_Actualizacion=Ultima_Actualizacion,
-                           Contaminantes1=Contaminantes1,Unidad1=Unidad1,Promedio1=Promedio1,
-                           Ultimo_Valor1=Ultimo_Valor1,Ultima_Actualizacion1=Ultima_Actualizacion1,
-                           colores=colores)
+                           colores=colores, Calidad=Calidad)
 if __name__ == '__main__':
     app.run(debug=True)
 

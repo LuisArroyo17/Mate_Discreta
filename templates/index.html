@@ -58,11 +58,15 @@
     <section class="section" id="portfolio">
     <!-- main content -->
    <div class="container">
-    <!-- navbars-->     
+    <!-- navbars-->   
+     <!--{% set colores = ["bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info"] %}-->  
     <h3 class="components-section-title font-weight-normal mt-5">Contaminantes</h3>
-        {% set colores = ["bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info"] %}
         {% for contaminante in Contaminantes %}
             {% set color_index = loop.index0 % colores|length %}
+            {% set Unidad_index = loop.index0 % Unidad|length %}
+            {% set Promedio_index = loop.index0 % Promedio|length %}
+            {% set Ultimo_Valor_index = loop.index0 % Ultimo_Valor|length %}
+            {% set Calidad_index = loop.index0 % Calidad|length %}
         <nav class="navbar navbar-expand-sm navbar-dark {{ colores[color_index] }} rounded shadow mb-3">
         <div class="container">
             <a class="navbar-brand" href="#">{{ contaminante }}</a>
@@ -72,29 +76,30 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto"> 
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link" href="#">{{Ultimo_Valor[Ultimo_Valor_index]}}</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">navbar button</a>
+                        <a class="nav-link" href="#">{{Promedio[Promedio_index]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{Unidad[Unidad_index]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">{{Calidad[Calidad_index]}}</a>
                     </li>
                 </ul>                       
             </div>
         </div>
         </nav>
         {% endfor %}
-
-    </section>
-    
+    </section>  
 	<!-- core  -->
     <script src="static/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="static/vendors/bootstrap/bootstrap.bundle.js"></script>
-
     <!-- bootstrap 3 affix -->
 	<script src="static/vendors/bootstrap/bootstrap.affix.js"></script>
-
     <!-- Owl carousel  -->
     <script src="static/vendors/owl-carousel/js/owl.carousel.js"></script>
-
     <!-- Ollie js -->
     <script src="static/js/Ollie.js"></script>
 </body>
