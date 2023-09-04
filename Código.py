@@ -32,6 +32,7 @@ for location in sorted_location_data:
     Promedio= []
     Ultimo_Valor= []
     Ultima_Actualizacion= []
+    Enfermedades=["Enfermedades Respiratorias","Enfermedades Cardiovasculares","Irritación Respiratoria","Asma y Afecciones Respiratorias","Intoxicación por CO","Irritación Respiratoria"]
     colores = ["bg-primary", "bg-secondary", "bg-success", "bg-danger", "bg-warning", "bg-info"]
 for parameter in location['parameters']:
     #print(parameter['parameter'])
@@ -49,6 +50,7 @@ for parameter in location['parameters']:
         Calidad.append('Bueno')
     else:
         Calidad.append('Malo')
+
 app = Flask(__name__)
 app.static_folder = 'static'
 @app.route('/')
