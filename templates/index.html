@@ -60,25 +60,25 @@
         {% for contaminante in Contaminantes %}
             {% set color_index = loop.index0 % colores|length %}
             {% set Unidad_index = loop.index0 % Unidad|length %}
-            {% set Promedio_index = loop.index0 % Promedio|length %}
+            {% set Promediostr_index = loop.index0 % Promediostr|length %}
             {% set Ultimo_Valor_index = loop.index0 % Ultimo_Valor|length %}
             {% set Calidad_index = loop.index0 % Calidad|length %}
         <nav class="navbar navbar-expand-sm navbar-dark {{ colores[color_index] }} rounded shadow mb-3">
         <div class="container">
-            <a class="navbar-brand" href="#">{{ contaminante }}</a>
+            <a class="navbar-brand" style="color: white;" >{{ contaminante }}</a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto"> 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{Ultimo_Valor[Ultimo_Valor_index]}}</a>
+                        <a class="nav-link" style="color: white;" >{{Ultimo_Valor[Ultimo_Valor_index]}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{Promedio[Promedio_index]}}</a>
+                        <a class="nav-link" style="color: white;" >{{Promediostr[Promediostr_index]}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{Unidad[Unidad_index]}}</a>
+                        <a class="nav-link" style="color: white;" >{{Unidad[Unidad_index]}}</a>
                     </li>
                     <li class="nav-item">
                         <a href="#book-table" class="ml-4 mt-1 btn btn-light btn-sm">{{Calidad[Calidad_index]}}</a>
@@ -103,8 +103,24 @@
                 </div>
                 <div class="txt-wrapper">
                     <h4 class="blog-title">{{Enfermedades}}</h4>
-                    <p>Síntomas: {{Sintomas[Sintomas_index]}}</p>
-                    <p>Descripción: {{Descripcion[Descripcion_index]}}</p>
+                    <tr>
+                        <td>
+                           <p class="font-weight-bold text-muted">Síntomas: :</p>
+                        </td>
+                        <td>
+                           <p class="text-muted">{{Sintomas[Sintomas_index]}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           <p class="font-weight-bold text-muted">Descripción: :</p>
+                        </td>
+                        <td>
+                           <p class="text-muted">{{Descripcion[Descripcion_index]}}</p>
+                        </td>
+                     </tr>
+                </div>
+                <div>
                 </div>
             </div>
             {% endfor %}
