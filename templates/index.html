@@ -92,7 +92,28 @@
         </div>
         </nav>
         {% endfor %}
-    </section>  
+    </section> 
+    <section class="section" id="blog">
+        <div class="container mb-3">
+            <h3 class="section-title mb-5">Enfermedades posibles</h3>
+            {% for contaminante in Contaminantes %}
+            {% set Unidad_index = loop.index0 % Unidad|length %}
+            {% set Promedio_index = loop.index0 % Promedio|length %}
+            {% set Ultimo_Valor_index = loop.index0 % Ultimo_Valor|length %}
+            {% set Calidad_index = loop.index0 % Calidad|length %}
+            <div class="blog-wrapper">
+                <div class="img-wrapper">
+                    <img src="static\imgs\EnfRes.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
+                </div>
+                <div class="txt-wrapper">
+                    <h4 class="blog-title">Enfermedades Respiratorias.</h4>
+                    <p>La exposición a altos niveles de partículas en el aire(PM2.5 y PM10) puede causar o agravar enfermedades respiratorias como el asma, la bronquitis crónica y la enfermedad pulmonar obstructiva crónica (EPOC).</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section> 
+        
 	<!-- core  -->
     <script src="static/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="static/vendors/bootstrap/bootstrap.bundle.js"></script>
