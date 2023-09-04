@@ -6,17 +6,13 @@
     <meta name="description" content="Start your development with Ollie landing page.">
     <meta name="author" content="Devcrud">
     <title>Ollie Landing page | Free Bootstrap 4.3.x landing page</title>
-
     <!-- font icons -->
     <link rel="stylesheet" href="static/vendors/themify-icons/css/themify-icons.css">
-    
     <!-- owl carousel -->
     <link rel="stylesheet" href="static/vendors/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="static/vendors/owl-carousel/css/owl.theme.default.css">
-
     <!-- Bootstrap + Ollie main styles -->
 	<link rel="stylesheet" href="static/css/ollie.css">
-    
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
@@ -30,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#home">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-primary" href="#portfolio">Resultados</a>
@@ -96,18 +92,19 @@
     <section class="section" id="blog">
         <div class="container mb-3">
             <h3 class="section-title mb-5">Enfermedades posibles</h3>
-            {% for contaminante in Contaminantes %}
-            {% set Unidad_index = loop.index0 % Unidad|length %}
-            {% set Promedio_index = loop.index0 % Promedio|length %}
-            {% set Ultimo_Valor_index = loop.index0 % Ultimo_Valor|length %}
-            {% set Calidad_index = loop.index0 % Calidad|length %}
+            {% for Enfermedades in Enfermedades %}
+                {% set Unidad_index = loop.index0 % Unidad|length %}
+                {% set Sintomas_index = loop.index0 % Sintomas|length %}
+                {% set Descripcion_index = loop.index0 % Descripcion|length %}
+                {% set img_index = loop.index0 % img|length %}
             <div class="blog-wrapper">
                 <div class="img-wrapper">
-                    <img src="static\imgs\EnfRes.jpg" alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, ollie Landing page">
+                    <img src="static\imgs\{{img[img_index]}}" alt="waza">
                 </div>
                 <div class="txt-wrapper">
-                    <h4 class="blog-title">Enfermedades Respiratorias.</h4>
-                    <p>La exposición a altos niveles de partículas en el aire(PM2.5 y PM10) puede causar o agravar enfermedades respiratorias como el asma, la bronquitis crónica y la enfermedad pulmonar obstructiva crónica (EPOC).</p>
+                    <h4 class="blog-title">{{Enfermedades}}</h4>
+                    <p>Síntomas: {{Sintomas[Sintomas_index]}}</p>
+                    <p>Descripción: {{Descripcion[Descripcion_index]}}</p>
                 </div>
             </div>
             {% endfor %}
