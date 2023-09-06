@@ -37,8 +37,8 @@ for parameter in location['parameters']:
     Ultima_Actualizacion.append(parameter['lastUpdated'])
     
     if parameter['lastValue']<parameter['average']:
-        Calidad.append('Malo')
-        #Calidad.append('Bueno')
+        #Calidad.append('Malo')
+        Calidad.append('Bueno')
     else:
         Calidad.append('Malo')
 #Para las enfermedades
