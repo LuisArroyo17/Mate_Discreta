@@ -1,6 +1,6 @@
 ## Mate_Discreta
 
--------https://github.com/LuisArroyo17/Mate_Discreta.git----------
+-------https://github.com/LuisArroyo17/Mate_Discreta.git ----------
 
 Para que este código se ejecute correctamente, necesitas tener las siguientes bibliotecas de Python instaladas:
 
@@ -14,4 +14,4 @@ Para que este código se ejecute correctamente, necesitas tener las siguientes b
 
 Asegúrate de tener estas bibliotecas instaladas en tu entorno de desarrollo antes de ejecutar el código. También, ten en cuenta que necesitarás una clave de API válida para la API de OpenAQ para que el código funcione correctamente. Asegúrate de tener esta clave y que la has configurado adecuadamente en el código.
 
--------https://github.com/LuisArroyo17/Mate_Discreta.git----------
+-------https://github.com/LuisArroyo17/Mate_Discreta.git ----------
