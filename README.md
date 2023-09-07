@@ -6,13 +6,9 @@ Para que este código se ejecute correctamente, necesitas tener las siguientes b
 
 Flask: Flask es un framework web de Python que se utiliza para crear aplicaciones web. Puedes instalar Flask utilizando pip:
 
-Copy code
-
 pip install Flask
 
 requests: La biblioteca "requests" se utiliza para realizar solicitudes HTTP a la API de OpenAQ. Puedes instalarlo también con pip:
-
-Copy code
 
 pip install requests
 
